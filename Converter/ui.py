@@ -1,13 +1,25 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'ui.ui'
+#
+# Created by: PyQt5 UI code generator 5.14.1
+#
+# WARNING! All changes made in this file will be lost!
+
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(488, 177)
+        Form.resize(418, 177)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/rc/icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        Form.setWindowIcon(icon)
         Form.setStyleSheet("QLineEdit{\n"
 "background-color: white;\n"
-"font-family: Arial;\n"
+"font-famaly: Arial;\n"
 "}\n"
 "QWidget{\n"
 "background-color: white;\n"
@@ -42,12 +54,16 @@ class Ui_Form(object):
         self.confirm = QtWidgets.QPushButton(Form)
         self.confirm.setGeometry(QtCore.QRect(10, 60, 151, 41))
         self.confirm.setObjectName("confirm")
+        self.checkBox = QtWidgets.QCheckBox(Form)
+        self.checkBox.setGeometry(QtCore.QRect(180, 90, 67, 18))
+        self.checkBox.setObjectName("checkBox")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Convert png to bitmap"))
-        self.file.setText(_translate("Form", "File .png or .jpg"))
+        Form.setWindowTitle(_translate("Form", "Stormworks: image to bitmap"))
+        self.file.setText(_translate("Form", "File"))
         self.confirm.setText(_translate("Form", "Confirm"))
+        self.checkBox.setText(_translate("Form", "Save in txt"))

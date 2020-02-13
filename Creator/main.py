@@ -2,14 +2,14 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 from ui import Ui_Form
 import sys
 from PyQt5.QtGui import QIcon
+import rc_rc
 
 #Form initialization
 app = QtWidgets.QApplication(sys.argv)
 Form = QtWidgets.QWidget()
 ui = Ui_Form()
 ui.setupUi(Form)
-Form.setWindowTitle('Stormworks character creator')
-Form.setWindowIcon(QIcon('icon.ico'))
+Form.setWindowTitle('Stormworks: character creator')
 Form.show()
 
 #Ready-made variable

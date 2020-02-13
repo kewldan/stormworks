@@ -5,6 +5,9 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(649, 366)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/rc/icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        Form.setWindowIcon(icon)
         Form.setStyleSheet("QPushButton {\n"
 "color: black;\n"
 "background-color: white;\n"
@@ -19,9 +22,6 @@ class Ui_Form(object):
 "\n"
 "QPushButton:hover{\n"
 "background-color: silver;\n"
-"}\n"
-"#textEdit{\n"
-"font-size:26px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
@@ -112,7 +112,7 @@ class Ui_Form(object):
         self.pushButton_25.setObjectName("pushButton_25")
         self.gridLayout.addWidget(self.pushButton_25, 4, 4, 1, 1)
         self.textEdit = QtWidgets.QTextEdit(Form)
-        self.textEdit.setGeometry(QtCore.QRect(470, 90, 171, 171))
+        self.textEdit.setGeometry(QtCore.QRect(470, 80, 171, 171))
         self.textEdit.setObjectName("textEdit")
 
         self.retranslateUi(Form)

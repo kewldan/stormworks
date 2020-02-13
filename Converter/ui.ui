@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Convert png to bitmap</string>
+   <string>Stormworks: image to bitmap</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="rc.qrc">
+    <normaloff>:/rc/icon.ico</normaloff>:/rc/icon.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QLineEdit{
@@ -55,7 +59,7 @@ background-color: green;
     <string extracomment="File .png or .jpg"/>
    </property>
    <property name="text">
-    <string>File .png or .jpg</string>
+    <string>File</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="out">
@@ -87,7 +91,22 @@ background-color: green;
     <string>Confirm</string>
    </property>
   </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>90</y>
+     <width>67</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save in txt</string>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="rc.qrc"/>
+ </resources>
  <connections/>
 </ui>

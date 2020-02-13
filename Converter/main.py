@@ -3,19 +3,24 @@ from PIL import Image, ImageDraw
 from PyQt5 import QtWidgets, QtCore, QtGui
 from ui import Ui_Form
 import sys
+import rc_rc
 from PyQt5.QtGui import QIcon
+import datetime
 app = QtWidgets.QApplication(sys.argv)
 Form = QtWidgets.QWidget()
 ui = Ui_Form()
 ui.setupUi(Form)
-Form.setWindowIcon(QIcon('./icon.ico'))
 Form.setWindowTitle('Stormworks: image to bitmap')
 Form.show()
 def start():
     try:
-        image = Image.open(ui.file.text()) #Load image 
-    except FileNotFoundError:
-        ui.out.setText('FILE NOT FOUND') #If error
+        try:
+            image = Image.open(ui.file.text()) #Load image 
+        except FileNotFoundError:
+            ui.out.setText('FileNotFoundError') #If error
+            return
+    except OSError:
+        print("Unknown OSError (URL SUKA NE VBIVAY)")
         return
         #Image Functions
     draw = ImageDraw.Draw(image)  
@@ -36,9 +41,12 @@ def start():
             if r<122 and g<122 and b<122:
                 pr="1"
             ar=ar+pr
-
-    print("BM={[\"A\"]=\"" + str(ar) + "\"}")
     ui.out.setText("BM={[\"A\"]=\"" + str(ar) + "\"}")
+    def save():
+        f=open('saved.txt','w')
+        f.write("BM={[\"A\"]=\"" + str(ar) + "\"}\n")
+    if ui.checkBox.isChecked()==True:
+        save()
 
 ui.confirm.clicked.connect(start)
 sys.exit(app.exec_())
